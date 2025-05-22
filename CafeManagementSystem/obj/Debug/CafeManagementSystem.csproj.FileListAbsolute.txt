@@ -35,7 +35,6 @@ D:\CafeManagementSystem\CafeManagementSystem\bin\Debug\System.Numerics.Vectors.x
 D:\CafeManagementSystem\CafeManagementSystem\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\CafeManagementSystem\CafeManagementSystem\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.csprojAssemblyReference.cache
-D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.Form1.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.Home.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.Properties.Resources.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.csproj.GenerateResource.cache
@@ -43,3 +42,5 @@ D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.cspr
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.csproj.CopyComplete
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.exe
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.pdb
+D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.Login.resources
+D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.Welcome.resources

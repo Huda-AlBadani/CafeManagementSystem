@@ -11,11 +11,11 @@ using MySql.Data.MySqlClient;
 
 namespace CafeManagementSystem
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         string conn = "server=localhost;Database=cafe;Uid=root;Pwd=;";
 
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -49,7 +49,9 @@ namespace CafeManagementSystem
                                 int userId = reader.GetInt32("id");
                                 string loggedInUsername = reader.GetString("name");
 
-                                MessageBox.Show("correct login!");
+                                Home h = new Home(userId, loggedInUsername);
+                                h.Show();
+                                this.Hide();
                             }
                             else
                             {
