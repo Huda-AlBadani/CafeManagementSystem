@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(uc_add));
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblCategoris = new System.Windows.Forms.Label();
-            this.lblProNamw = new System.Windows.Forms.Label();
+            this.lblProName = new System.Windows.Forms.Label();
             this.lblPrice = new System.Windows.Forms.Label();
             this.cmbCategories = new Guna.UI2.WinForms.Guna2ComboBox();
             this.txtProName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -64,15 +64,15 @@
             this.lblCategoris.TabIndex = 2;
             this.lblCategoris.Text = "Categories";
             // 
-            // lblProNamw
+            // lblProName
             // 
-            this.lblProNamw.AutoSize = true;
-            this.lblProNamw.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProNamw.Location = new System.Drawing.Point(247, 258);
-            this.lblProNamw.Name = "lblProNamw";
-            this.lblProNamw.Size = new System.Drawing.Size(150, 24);
-            this.lblProNamw.TabIndex = 3;
-            this.lblProNamw.Text = "Product Name";
+            this.lblProName.AutoSize = true;
+            this.lblProName.Font = new System.Drawing.Font("Rockwell", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProName.Location = new System.Drawing.Point(247, 258);
+            this.lblProName.Name = "lblProName";
+            this.lblProName.Size = new System.Drawing.Size(150, 24);
+            this.lblProName.TabIndex = 3;
+            this.lblProName.Text = "Product Name";
             // 
             // lblPrice
             // 
@@ -184,6 +184,7 @@
             this.btnAdd.Size = new System.Drawing.Size(218, 55);
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // guna2Elipse1
             // 
@@ -201,11 +202,12 @@
             this.Controls.Add(this.txtProName);
             this.Controls.Add(this.cmbCategories);
             this.Controls.Add(this.lblPrice);
-            this.Controls.Add(this.lblProNamw);
+            this.Controls.Add(this.lblProName);
             this.Controls.Add(this.lblCategoris);
             this.Controls.Add(this.lblTitle);
             this.Name = "uc_add";
             this.Size = new System.Drawing.Size(911, 633);
+            this.Leave += new System.EventHandler(this.Uc_add_Leave);
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -216,7 +218,7 @@
 
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label lblCategoris;
-        private System.Windows.Forms.Label lblProNamw;
+        private System.Windows.Forms.Label lblProName;
         private System.Windows.Forms.Label lblPrice;
         private Guna.UI2.WinForms.Guna2ComboBox cmbCategories;
         private Guna.UI2.WinForms.Guna2TextBox txtProName;
