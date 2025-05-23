@@ -118,6 +118,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\uc_add.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_add.Designer.cs">
+      <DependentUpon>uc_add.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Welcome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -139,6 +145,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\uc_add.resx">
+      <DependentUpon>uc_add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>
     </EmbeddedResource>

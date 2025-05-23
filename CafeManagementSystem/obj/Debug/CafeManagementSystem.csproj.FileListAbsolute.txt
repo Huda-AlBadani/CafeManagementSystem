@@ -44,3 +44,4 @@ D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.exe
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.pdb
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.Login.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.Welcome.resources
+D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_add.resources
