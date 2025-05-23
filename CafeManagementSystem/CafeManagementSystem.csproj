@@ -124,6 +124,12 @@
     <Compile Include="UserControls\uc_add.Designer.cs">
       <DependentUpon>uc_add.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\uc_order.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\uc_order.Designer.cs">
+      <DependentUpon>uc_order.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Welcome.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="UserControls\uc_add.resx">
       <DependentUpon>uc_add.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\uc_order.resx">
+      <DependentUpon>uc_order.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\Welcome.resx">
       <DependentUpon>Welcome.cs</DependentUpon>

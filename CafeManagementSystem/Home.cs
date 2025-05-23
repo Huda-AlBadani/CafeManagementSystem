@@ -73,6 +73,7 @@ namespace CafeManagementSystem
         private void Home_Load(object sender, EventArgs e)
         {
             uc_add1.Visible = false;
+            uc_order1.Visible = false;
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -91,6 +92,12 @@ namespace CafeManagementSystem
         {
             uc_add1.Visible = true;
             uc_add1.BringToFront();
+        }
+
+        private void BtnOrder_Click(object sender, EventArgs e)
+        {
+            uc_order1.Visible = true;
+            uc_order1.BringToFront();
         }
     }
 }

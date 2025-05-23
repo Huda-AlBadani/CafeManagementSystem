@@ -37,12 +37,14 @@
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.btnOrder = new Guna.UI2.WinForms.Guna2Button();
             this.pnlRight = new System.Windows.Forms.Panel();
-            this.welcome1 = new CafeManagementSystem.UserControls.Welcome();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse2 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.uc_add1 = new CafeManagementSystem.UserControls.uc_add();
+            this.welcome1 = new CafeManagementSystem.UserControls.Welcome();
+            this.uc_order1 = new CafeManagementSystem.UserControls.uc_order();
             this.pnlLeft.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -186,24 +188,18 @@
             this.btnOrder.Size = new System.Drawing.Size(236, 50);
             this.btnOrder.TabIndex = 1;
             this.btnOrder.Text = " Orders";
+            this.btnOrder.Click += new System.EventHandler(this.BtnOrder_Click);
             // 
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.uc_order1);
             this.pnlRight.Controls.Add(this.uc_add1);
             this.pnlRight.Controls.Add(this.welcome1);
             this.pnlRight.Location = new System.Drawing.Point(246, 15);
             this.pnlRight.Name = "pnlRight";
             this.pnlRight.Size = new System.Drawing.Size(911, 633);
             this.pnlRight.TabIndex = 1;
-            // 
-            // welcome1
-            // 
-            this.welcome1.BackColor = System.Drawing.Color.White;
-            this.welcome1.Location = new System.Drawing.Point(0, 0);
-            this.welcome1.Name = "welcome1";
-            this.welcome1.Size = new System.Drawing.Size(911, 633);
-            this.welcome1.TabIndex = 0;
             // 
             // guna2Elipse1
             // 
@@ -225,6 +221,11 @@
             this.guna2Elipse4.BorderRadius = 30;
             this.guna2Elipse4.TargetControl = this.pnlRight;
             // 
+            // guna2Elipse5
+            // 
+            this.guna2Elipse5.BorderRadius = 30;
+            this.guna2Elipse5.TargetControl = this.pnlRight;
+            // 
             // uc_add1
             // 
             this.uc_add1.BackColor = System.Drawing.Color.White;
@@ -232,6 +233,22 @@
             this.uc_add1.Name = "uc_add1";
             this.uc_add1.Size = new System.Drawing.Size(911, 633);
             this.uc_add1.TabIndex = 1;
+            // 
+            // welcome1
+            // 
+            this.welcome1.BackColor = System.Drawing.Color.White;
+            this.welcome1.Location = new System.Drawing.Point(0, 0);
+            this.welcome1.Name = "welcome1";
+            this.welcome1.Size = new System.Drawing.Size(911, 633);
+            this.welcome1.TabIndex = 0;
+            // 
+            // uc_order1
+            // 
+            this.uc_order1.BackColor = System.Drawing.Color.White;
+            this.uc_order1.Location = new System.Drawing.Point(0, 0);
+            this.uc_order1.Name = "uc_order1";
+            this.uc_order1.Size = new System.Drawing.Size(911, 633);
+            this.uc_order1.TabIndex = 2;
             // 
             // Home
             // 
@@ -272,5 +289,7 @@
         private UserControls.Welcome welcome1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse4;
         private UserControls.uc_add uc_add1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
+        private UserControls.uc_order uc_order1;
     }
 }
