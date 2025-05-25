@@ -46,3 +46,4 @@ D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.Logi
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.Welcome.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_add.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_order.resources
+D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_update.resources
