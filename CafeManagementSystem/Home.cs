@@ -74,6 +74,8 @@ namespace CafeManagementSystem
         {
             uc_add1.Visible = false;
             uc_order1.Visible = false;
+            uc_update1.Visible = false;
+
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
@@ -98,6 +100,12 @@ namespace CafeManagementSystem
         {
             uc_order1.Visible = true;
             uc_order1.BringToFront();
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            uc_update1.Visible = true;
+            uc_update1.BringToFront();
         }
     }
 }

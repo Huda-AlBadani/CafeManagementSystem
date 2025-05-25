@@ -42,9 +42,11 @@
             this.guna2Elipse3 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse4 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2Elipse5 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.guna2Elipse6 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
+            this.uc_order1 = new CafeManagementSystem.UserControls.uc_order();
             this.uc_add1 = new CafeManagementSystem.UserControls.uc_add();
             this.welcome1 = new CafeManagementSystem.UserControls.Welcome();
-            this.uc_order1 = new CafeManagementSystem.UserControls.uc_order();
+            this.uc_update1 = new CafeManagementSystem.UserControls.uc_update();
             this.pnlLeft.SuspendLayout();
             this.pnlRight.SuspendLayout();
             this.SuspendLayout();
@@ -141,6 +143,7 @@
             this.btnUpdate.Size = new System.Drawing.Size(236, 50);
             this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Update Products";
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // btnAdd
             // 
@@ -193,6 +196,7 @@
             // pnlRight
             // 
             this.pnlRight.BackColor = System.Drawing.Color.White;
+            this.pnlRight.Controls.Add(this.uc_update1);
             this.pnlRight.Controls.Add(this.uc_order1);
             this.pnlRight.Controls.Add(this.uc_add1);
             this.pnlRight.Controls.Add(this.welcome1);
@@ -226,6 +230,19 @@
             this.guna2Elipse5.BorderRadius = 30;
             this.guna2Elipse5.TargetControl = this.pnlRight;
             // 
+            // guna2Elipse6
+            // 
+            this.guna2Elipse6.BorderRadius = 30;
+            this.guna2Elipse6.TargetControl = this.pnlRight;
+            // 
+            // uc_order1
+            // 
+            this.uc_order1.BackColor = System.Drawing.Color.White;
+            this.uc_order1.Location = new System.Drawing.Point(0, 0);
+            this.uc_order1.Name = "uc_order1";
+            this.uc_order1.Size = new System.Drawing.Size(911, 633);
+            this.uc_order1.TabIndex = 2;
+            // 
             // uc_add1
             // 
             this.uc_add1.BackColor = System.Drawing.Color.White;
@@ -242,13 +259,13 @@
             this.welcome1.Size = new System.Drawing.Size(911, 633);
             this.welcome1.TabIndex = 0;
             // 
-            // uc_order1
+            // uc_update1
             // 
-            this.uc_order1.BackColor = System.Drawing.Color.White;
-            this.uc_order1.Location = new System.Drawing.Point(0, 0);
-            this.uc_order1.Name = "uc_order1";
-            this.uc_order1.Size = new System.Drawing.Size(911, 633);
-            this.uc_order1.TabIndex = 2;
+            this.uc_update1.BackColor = System.Drawing.Color.White;
+            this.uc_update1.Location = new System.Drawing.Point(0, 0);
+            this.uc_update1.Name = "uc_update1";
+            this.uc_update1.Size = new System.Drawing.Size(911, 633);
+            this.uc_update1.TabIndex = 3;
             // 
             // Home
             // 
@@ -291,5 +308,7 @@
         private UserControls.uc_add uc_add1;
         private Guna.UI2.WinForms.Guna2Elipse guna2Elipse5;
         private UserControls.uc_order uc_order1;
+        private Guna.UI2.WinForms.Guna2Elipse guna2Elipse6;
+        private UserControls.uc_update uc_update1;
     }
 }
