@@ -60,5 +60,12 @@ namespace CafeManagementSystem.UserControls
             txtCategory.Clear();
             txtPrice.Clear();
         }
+
+        private void Uc_update_Enter(object sender, EventArgs e)
+        {
+            query = "select * from products";
+            DataSet ds = fn.getData(query);
+            guna2DataGridView1.DataSource = ds.Tables[0];
+        }
     }
 }
