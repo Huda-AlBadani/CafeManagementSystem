@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using DGVPrinterHelper;
 
 namespace CafeManagementSystem.UserControls
 {
@@ -99,6 +100,99 @@ namespace CafeManagementSystem.UserControls
             Int64 qu = Int64.Parse(nudQuantity.Value.ToString());
             Int64 price = Int64.Parse(txtPrice.Text);
             txtTotal.Text = (qu * price).ToString();
+        }
+
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Now;
+            string amPm = now.Hour < 12 ? "pm" : "am"; 
+
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Bill";
+            printer.SubTitle = "Date: " + now.ToString("yyyy/MM/dd") + " , " + now.ToString("hh:mm:ss") + " " + amPm;
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "Total Payment Amount: " + LblTotalAmount.Text;
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(guna2DataGridView1);
+
+
+            try
+            {
+                string conn = "server=localhost;Database=cafe;Uid=root;Pwd=;";
+                MySqlConnection connn = new MySqlConnection(conn);
+                connn.Open();
+                MySqlTransaction transaction = connn.BeginTransaction();
+
+                try
+                {
+                    string insertOrderQuery = "INSERT INTO orders (order_date, total_amount) VALUES (@orderDate, @totalAmount)";
+                    MySqlCommand Cmd = new MySqlCommand(insertOrderQuery, connn, transaction);
+                    Cmd.Parameters.AddWithValue("@orderDate", DateTime.Now);
+                    Cmd.Parameters.AddWithValue("@totalAmount", total);
+                    Cmd.ExecuteNonQuery();
+
+                    string getLastIdQuery = "SELECT LAST_INSERT_ID()";
+                    MySqlCommand idCmd = new MySqlCommand(getLastIdQuery, connn, transaction);
+                    int orderId = Convert.ToInt32(idCmd.ExecuteScalar());
+
+                    foreach (DataGridViewRow row in guna2DataGridView1.Rows)
+                    {
+                        if (row.Cells[0].Value != null && row.Cells[1].Value != null &&
+                            row.Cells[2].Value != null && row.Cells[3].Value != null)
+                        {
+                            string productName = row.Cells[0].Value.ToString();
+                            decimal price = decimal.Parse(row.Cells[1].Value.ToString());
+                            int quantity = Convert.ToInt32(row.Cells[2].Value);
+                            decimal totalPrice = decimal.Parse(row.Cells[3].Value.ToString());
+
+                            string getProductIdQuery = "SELECT id FROM products WHERE name = @productName";
+                            MySqlCommand productCmd = new MySqlCommand(getProductIdQuery, connn, transaction);
+                            productCmd.Parameters.AddWithValue("@productName", productName);
+                            int productId = Convert.ToInt32(productCmd.ExecuteScalar());
+
+                            string insertDetailQuery = @"INSERT INTO order_details 
+                                               (order_id, product_id, quantity, unit_price, total_price) 
+                                               VALUES (@orderId, @productId, @quantity, @unitPrice, @totalPrice)";
+                            MySqlCommand detailCmd = new MySqlCommand(insertDetailQuery, connn, transaction);
+                            detailCmd.Parameters.AddWithValue("@orderId", orderId);
+                            detailCmd.Parameters.AddWithValue("@productId", productId);
+                            detailCmd.Parameters.AddWithValue("@quantity", quantity);
+                            detailCmd.Parameters.AddWithValue("@unitPrice", price);
+                            detailCmd.Parameters.AddWithValue("@totalPrice", totalPrice);
+                            detailCmd.ExecuteNonQuery();
+
+
+                        }
+                    }
+
+                    transaction.Commit();
+                    MessageBox.Show("Bill Added Successfully into Database!", "success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    MessageBox.Show("Bill Added into Database error: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    connn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Database error connection: " + ex.Message, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+            total = 0;
+            guna2DataGridView1.Rows.Clear();
+            LblTotalAmount.Text = "RY: " + total;
         }
 
         private void Guna2DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
