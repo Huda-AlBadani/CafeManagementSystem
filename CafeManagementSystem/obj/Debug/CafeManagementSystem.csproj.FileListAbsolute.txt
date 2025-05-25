@@ -47,3 +47,4 @@ D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.User
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_add.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_order.resources
 D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_update.resources
+D:\CafeManagementSystem\CafeManagementSystem\obj\Debug\CafeManagementSystem.UserControls.uc_remove.resources
